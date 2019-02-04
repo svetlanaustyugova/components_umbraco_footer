@@ -1,0 +1,48 @@
+@model Graph.Components.Navigation.FooterModel
+
+@Html.Raw(Model.Address)
+
+@if (string.IsNullOrEmpty(Model.Phone))
+{
+	@Model.Phone
+}
+
+@if (string.IsNullOrEmpty(Model.Email))
+{
+	@Model.Email
+}
+
+@if (string.IsNullOrEmpty(Model.Fax))
+{
+	@Model.Fax
+}
+
+@if (string.IsNullOrEmpty(Model.Facebook))
+{
+	@Model.Facebook
+}
+
+@if (string.IsNullOrEmpty(Model.Twitter))
+{
+	@Model.Twitter
+}
+
+@if (string.IsNullOrEmpty(Model.Instagram))
+{
+	@Model.Instagram
+}
+
+@if (string.IsNullOrEmpty(Model.LinkedIn))
+{
+	@Model.LinkedIn
+}
+
+@if (string.IsNullOrEmpty(Model.YouTube))
+{
+	@Model.YouTube
+}
+
+@if (string.IsNullOrEmpty(Model.CopyrightText))
+{
+	@Model.CopyrightText
+}
