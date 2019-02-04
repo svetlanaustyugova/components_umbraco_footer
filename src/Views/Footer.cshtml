@@ -2,47 +2,47 @@
 
 @Html.Raw(Model.Address)
 
-@if (string.IsNullOrEmpty(Model.Phone))
+@if (string.IsNullOrEmpty(Model.Phone) == false)
 {
 	@Model.Phone
 }
 
-@if (string.IsNullOrEmpty(Model.Email))
+@if (string.IsNullOrEmpty(Model.Email) == false)
 {
 	@Model.Email
 }
 
-@if (string.IsNullOrEmpty(Model.Fax))
+@if (string.IsNullOrEmpty(Model.Fax) == false)
 {
 	@Model.Fax
 }
 
-@if (string.IsNullOrEmpty(Model.Facebook))
+@if (string.IsNullOrEmpty(Model.Facebook) == false)
 {
 	@Model.Facebook
 }
 
-@if (string.IsNullOrEmpty(Model.Twitter))
+@if (string.IsNullOrEmpty(Model.Twitter) == false)
 {
 	@Model.Twitter
 }
 
-@if (string.IsNullOrEmpty(Model.Instagram))
+@if (string.IsNullOrEmpty(Model.Instagram) == false)
 {
 	@Model.Instagram
 }
 
-@if (string.IsNullOrEmpty(Model.LinkedIn))
+@if (string.IsNullOrEmpty(Model.LinkedIn) == false)
 {
 	@Model.LinkedIn
 }
 
-@if (string.IsNullOrEmpty(Model.YouTube))
+@if (string.IsNullOrEmpty(Model.YouTube) == false)
 {
 	@Model.YouTube
 }
 
-@if (string.IsNullOrEmpty(Model.CopyrightText))
+@if (string.IsNullOrEmpty(Model.CopyrightText) == false)
 {
 	@Model.CopyrightText
 }

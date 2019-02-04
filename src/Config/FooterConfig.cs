@@ -2,7 +2,7 @@ namespace Graph.Components.Navigation
 {
 	public static class FooterConfig
 	{
-		public const string SettingsNodeId = "1087";
+		public const string SettingsNodeId = "ID";
 
 		public const string AddressFieldAlias = "address";
 
