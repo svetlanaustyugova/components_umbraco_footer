@@ -1,48 +1,96 @@
-@model Graph.Components.Navigation.FooterModel
+@model Graph.Components.Footer.FooterModel
 
-@Html.Raw(Model.Address)
+<div class="footer">
+	<div class="footer__container">
+		<div class="footer__contacts footer-contacts">
+			<div class="footer-contacts__item">
+				<svg class="footer-contacts__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+					<path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 13.5c0 5.25-6.75 9.75-6.75 9.75s-6.75-4.5-6.75-9.75c0-1.7902.71116-3.5071 1.977-4.77297C11.4929 7.46116 13.2098 6.75 15 6.75c1.7902 0 3.5071.71116 4.773 1.97703C21.0388 9.9929 21.75 11.7098 21.75 13.5z"/>
+					<path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15.75c1.2426 0 2.25-1.0074 2.25-2.25s-1.0074-2.25-2.25-2.25-2.25 1.0074-2.25 2.25 1.0074 2.25 2.25 2.25z"/>
+				</svg>
+				@Html.Raw(Model.Address)
+			</div>
+			@if (string.IsNullOrEmpty(Model.Phone) == false)
+			{
+				<div class="footer-contacts__item">
+					<svg class="footer-contacts__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path d="M22.4161 18.6901V20.9401C22.4169 21.149 22.3741 21.3557 22.2905 21.5471C22.2068 21.7385 22.0841 21.9103 21.9301 22.0515C21.7762 22.1927 21.5945 22.3002 21.3966 22.3671C21.1988 22.434 20.9891 22.4589 20.7811 22.4401C18.4732 22.1893 16.2563 21.4007 14.3086 20.1376C12.4965 18.9861 10.9601 17.4497 9.80859 15.6376C8.54107 13.681 7.75227 11.4533 7.50609 9.13507C7.48735 8.92767 7.51199 8.71864 7.57846 8.52129C7.64493 8.32394 7.75177 8.14259 7.89216 7.98879C8.03256 7.83499 8.20344 7.7121 8.39393 7.62796C8.58442 7.54382 8.79034 7.50027 8.99859 7.50007H11.2486C11.6126 7.49649 11.9654 7.62538 12.2414 7.86272C12.5174 8.10006 12.6976 8.42966 12.7486 8.79007C12.8436 9.51012 13.0197 10.2171 13.2736 10.8976C13.3745 11.166 13.3963 11.4578 13.3365 11.7382C13.2767 12.0187 13.1377 12.2762 12.9361 12.4801L11.9836 13.4326C13.0513 15.3102 14.6059 16.8649 16.4836 17.9326L17.4361 16.9801C17.64 16.7784 17.8975 16.6395 18.1779 16.5796C18.4584 16.5198 18.7501 16.5417 19.0186 16.6426C19.699 16.8965 20.406 17.0726 21.1261 17.1676C21.4904 17.219 21.8231 17.4025 22.061 17.6832C22.2988 17.9639 22.4252 18.3223 22.4161 18.6901Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<a class="footer-contacts__link" href="tel:@Model.Phone">@Model.Phone</a>
+				</div>
+			}
+			@if (string.IsNullOrEmpty(Model.Email) == false)
+			{
+				<div class="footer-contacts__item">
+					<svg class="footer-contacts__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9h12c.825 0 1.5.675 1.5 1.5v9c0 .825-.675 1.5-1.5 1.5H9c-.825 0-1.5-.675-1.5-1.5v-9C7.5 9.675 8.175 9 9 9z"/>
+						<path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.5 10.5L15 15.75 7.5 10.5"/>
+					</svg>
+					<a class="footer-contacts__link footer-contacts__link_email" href="tel:@Model.Email">@Model.Email</a>
+				</div>
+			}
+			@if (string.IsNullOrEmpty(Model.Fax) == false)
+			{
+				<div class="footer-contacts__item">
+					<svg class="footer-contacts__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path d="M22.4161 18.6901V20.9401C22.4169 21.149 22.3741 21.3557 22.2905 21.5471C22.2068 21.7385 22.0841 21.9103 21.9301 22.0515C21.7762 22.1927 21.5945 22.3002 21.3966 22.3671C21.1988 22.434 20.9891 22.4589 20.7811 22.4401C18.4732 22.1893 16.2563 21.4007 14.3086 20.1376C12.4965 18.9861 10.9601 17.4497 9.80859 15.6376C8.54107 13.681 7.75227 11.4533 7.50609 9.13507C7.48735 8.92767 7.51199 8.71864 7.57846 8.52129C7.64493 8.32394 7.75177 8.14259 7.89216 7.98879C8.03256 7.83499 8.20344 7.7121 8.39393 7.62796C8.58442 7.54382 8.79034 7.50027 8.99859 7.50007H11.2486C11.6126 7.49649 11.9654 7.62538 12.2414 7.86272C12.5174 8.10006 12.6976 8.42966 12.7486 8.79007C12.8436 9.51012 13.0197 10.2171 13.2736 10.8976C13.3745 11.166 13.3963 11.4578 13.3365 11.7382C13.2767 12.0187 13.1377 12.2762 12.9361 12.4801L11.9836 13.4326C13.0513 15.3102 14.6059 16.8649 16.4836 17.9326L17.4361 16.9801C17.64 16.7784 17.8975 16.6395 18.1779 16.5796C18.4584 16.5198 18.7501 16.5417 19.0186 16.6426C19.699 16.8965 20.406 17.0726 21.1261 17.1676C21.4904 17.219 21.8231 17.4025 22.061 17.6832C22.2988 17.9639 22.4252 18.3223 22.4161 18.6901Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<a class="footer-contacts__link" href="tel:@Model.Fax">@Model.Fax</a>
+				</div>
+			}
+		</div>
+		<div class="footer__social footer-social">
+			@if (string.IsNullOrEmpty(Model.Facebook) == false)
+			{
+				<a class="footer-social__link" href="@Model.Facebook" title="follow us on Facebook">
+					<svg class="footer-social__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path fill="#fff" fill-rule="evenodd" d="M3 0h24c1.65 0 3 1.33495 3 2.9999v23.9992c0 1.6499-1.35 2.9999-3 2.9999H3c-1.65 0-3-1.35-3-2.9999V2.9999C0 1.34995 1.35 0 3 0zm22.5 7.49985V3h-3.75c-2.895 0-5.25 2.33992-5.25 5.24982v3.74988h-3v4.4998h3v10.4997H21V16.4995h4.5v-4.4998H21V8.9998c0-.82497.675-1.49995 1.5-1.49995h3z" clip-rule="evenodd"/>
+					</svg>
+				</a>
+			}
 
-@if (string.IsNullOrEmpty(Model.Phone) == false)
-{
-	@Model.Phone
-}
+			@if (string.IsNullOrEmpty(Model.Twitter) == false)
+			{
+				<a class="footer-social__link" href="@Model.Twitter" title="follow us on Twitter">
+					<svg class="footer-social__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path fill="#fff" fill-rule="evenodd" d="M3 0h24c1.65 0 3 1.33495 3 2.9999v23.9992c0 1.6499-1.35 2.9999-3 2.9999H3c-1.65 0-3-1.35-3-2.9999V2.9999C0 1.34995 1.35 0 3 0zm9.42 22.9654c6.615-.3 11.04-5.0398 11.145-11.9696.72-.6 1.56-1.31994 1.935-2.11491-.615.31498-1.35.50998-2.16.61497.75-.53998 1.365-1.24495 1.68-2.20492-.78.41999-1.575.77997-2.565.95997-2.325-2.8049-7.89-.52498-6.9 3.67489-3.915-.24-6.3-2.00995-8.28-4.18487-1.125 1.82993-.15 4.60487 1.185 5.36977-.69-.045-1.215-.255-1.71-.4949.06 2.3099 1.335 3.4198 3.12 4.0198-.54.105-1.14.135-1.71.045.555 1.605 1.71 2.6099 3.69 2.8199-1.35 1.14-3.84 1.9349-5.85 1.62 1.725 1.0949 3.69 1.9649 6.42 1.8449z" clip-rule="evenodd"/>
+					</svg>
+				</a>
+			}
 
-@if (string.IsNullOrEmpty(Model.Email) == false)
-{
-	@Model.Email
-}
+			@if (string.IsNullOrEmpty(Model.Instagram) == false)
+			{
+				<a class="footer-social__link" href="@Model.Instagram" title="follow us on Instagram">
+					Instagram
+				</a>
+			}
 
-@if (string.IsNullOrEmpty(Model.Fax) == false)
-{
-	@Model.Fax
-}
+			@if (string.IsNullOrEmpty(Model.LinkedIn) == false)
+			{
+				<a class="footer-social__link" href="@Model.LinkedIn" title="follow us on LinkedIn">
+					<svg class="footer-social__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" width="30" height="30">
+						<path d="M25.5 25.5H21V17.55C21 16.305 19.995 15.3 18.75 15.3C17.505 15.3 16.5 16.305 16.5 17.55V25.5H12V12H16.5V13.8C17.25 12.54 18.885 11.7 20.25 11.7C23.145 11.7 25.5 14.055 25.5 16.95V25.5ZM6.75 9.465C5.25 9.465 4.035 8.25 4.035 6.75C4.035 5.25 5.25 4.035 6.75 4.035C8.25 4.035 9.465 5.25 9.465 6.75C9.465 8.25 8.25 9.465 6.75 9.465ZM9 25.5H4.5V12H9V25.5ZM27 0H3C1.335 0 0 1.335 0 3V27C0 28.65 1.35 30 3 30H27C28.65 30 30 28.65 30 27V3C30 1.335 28.65 0 27 0Z" fill="white"/>
+					</svg>
+				</a>
+			}
 
-@if (string.IsNullOrEmpty(Model.Facebook) == false)
-{
-	@Model.Facebook
-}
-
-@if (string.IsNullOrEmpty(Model.Twitter) == false)
-{
-	@Model.Twitter
-}
-
-@if (string.IsNullOrEmpty(Model.Instagram) == false)
-{
-	@Model.Instagram
-}
-
-@if (string.IsNullOrEmpty(Model.LinkedIn) == false)
-{
-	@Model.LinkedIn
-}
-
-@if (string.IsNullOrEmpty(Model.YouTube) == false)
-{
-	@Model.YouTube
-}
-
-@if (string.IsNullOrEmpty(Model.CopyrightText) == false)
-{
-	@Model.CopyrightText
-}
+			@if (string.IsNullOrEmpty(Model.YouTube) == false)
+			{
+				<a class="footer-social__link" href="@Model.YouTube" title="follow us on YouTube">
+					YouTube
+				</a>
+			}
+		</div>
+		<div class="footer__navigation footer-nav">
+			@foreach (var pageLink in Model.Pages)
+			{
+				<div class="footer-nav__item">
+					<a class="footer-nav__link" href="@pageLink.Link">@pageLink.Caption</a>
+				</div>
+			}
+		</div>
+		<div class="footer__copyright">
+			@Html.Raw(Model.CopyrightText)
+		</div>
+	</div>
+</div>

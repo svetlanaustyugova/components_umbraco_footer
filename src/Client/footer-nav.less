@@ -1,0 +1,37 @@
+@tablet: ~"(min-width: 736px)";
+@desktop: ~"(min-width: 1025px)";
+
+.footer-nav {
+	text-align: center;
+
+	@media @desktop {
+		text-align: left;
+	}
+
+	&__item {
+		text-align: center;
+		padding: 5px 0;
+		
+		@media @tablet {
+			display: inline-block;
+		}
+
+		@media @desktop {
+			padding: 0 0 0 30px;
+
+			&:first-child {
+				padding: 0;
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+		padding: 5px 20px;
+		color: white;
+
+		@media @desktop {
+			padding: 0;
+		}
+	}
+}
